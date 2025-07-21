@@ -178,31 +178,57 @@ section#home video {
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 56px; /* even bigger gap for larger containers */
+  gap: 32px;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 40px;
 }
 
 .video-container {
   background: linear-gradient(135deg, #232946 60%, #3e497a 100%);
-  padding: 28px; /* much more padding */
-  border-radius: 32px; /* more rounded */
-  box-shadow: 0 8px 32px #eebbc344; /* stronger shadow */
-  width: 400px; /* much bigger */
+  padding: 18px;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #eebbc344;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2.5px solid #eebbc3;
+  border: 2px solid #eebbc3;
   transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.video-container:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px #eebbc355;
+  border-color: #fff;
 }
 
 .video-container video {
   width: 100%;
-  height: 340px; /* much bigger video */
-  border-radius: 28px;
-  margin-bottom: 24px;
-  border: 3px solid #eebbc3;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  border: 2px solid #eebbc3;
   background: #232946;
+}
+
+.video-description {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #eebbc3;
+  background: rgba(35, 41, 70, 0.92);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: left;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px #eebbc344;
+}
+
+.planet-name {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;
+  text-shadow: 1px 1px 2px #eebbc388;
 }
 
 /* --- Rotoscope Main Videos Container --- */

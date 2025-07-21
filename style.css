@@ -176,19 +176,19 @@ section#home video {
 
 /* --- Solar System Video Gallery --- */
 .video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 containers per row */
+  gap: 28px;
+  justify-items: center;
   margin-top: 40px;
 }
 
 .video-container {
   background: linear-gradient(135deg, #232946 60%, #3e497a 100%);
-  padding: 18px;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px #eebbc344;
-  width: 320px;
+  padding: 14px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #eebbc344;
+  width: 240px; /* smaller width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,38 +197,55 @@ section#home video {
 }
 
 .video-container:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 32px #eebbc355;
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 6px 24px #eebbc355;
   border-color: #fff;
 }
 
 .video-container video {
   width: 100%;
-  height: auto;
-  border-radius: 16px;
-  margin-bottom: 12px;
+  height: 140px;
+  border-radius: 12px;
+  margin-bottom: 10px;
   border: 2px solid #eebbc3;
   background: #232946;
+  object-fit: cover;
 }
 
 .video-description {
-  margin-top: 8px;
-  font-size: 1em;
+  margin-top: 6px;
+  font-size: 0.98em;
   color: #eebbc3;
   background: rgba(35, 41, 70, 0.92);
-  padding: 16px;
-  border-radius: 14px;
+  padding: 10px;
+  border-radius: 10px;
   text-align: left;
-  line-height: 1.5;
+  line-height: 1.4;
   box-shadow: 0 2px 8px #eebbc344;
 }
 
 .planet-name {
-  font-size: 1.25em;
+  font-size: 1.1em;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   text-shadow: 1px 1px 2px #eebbc388;
+}
+
+/* Responsive: 2 per row on medium, 1 per row on small screens */
+@media (max-width: 900px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .video-gallery {
+    grid-template-columns: 1fr;
+  }
+  .video-container {
+    width: 98vw;
+    max-width: 320px;
+  }
 }
 
 /* --- Rotoscope Main Videos Container --- */

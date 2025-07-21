@@ -1,162 +1,340 @@
-/* Google Font for stylish appearance */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
-/* Base Styles */
-* {
-  box-sizing: border-box;
-}
+/* --- Unique Modern Cosmic Theme --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Quicksand:wght@400;600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom right, #6dd5fa, #2980b9); /* blue gradient */
-  color: #333;
+  font-family: 'Quicksand', Arial, sans-serif;
+  background: radial-gradient(ellipse at top left, #232946 60%, #121629 100%);
+  color: #eaeaea;
+  min-height: 100vh;
+  background-attachment: fixed;
+  /* Subtle cosmic dots */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 80px 80px, 160px 160px;
+  background-position: 0 0, 40px 40px;
 }
 
 /* Header */
 header {
-  background: linear-gradient(to right, #2193b0, #6dd5ed); /* blue gradient */
-  padding: 30px;
+  background: linear-gradient(90deg, #232946 60%, #3e497a 100%);
+  padding: 48px 0 32px 0;
   text-align: center;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #eebbc3;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 8px 32px #23294644;
+}
+
+header h1 {
+  font-family: 'Orbitron', 'Quicksand', Arial, sans-serif;
+  font-size: 2.8em;
+  margin: 0;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 12px #0008;
 }
 
 /* Navigation */
 nav {
   display: flex;
   justify-content: center;
-  background: linear-gradient(to right, #43cea2, #185a9d); /* blue/teal gradient */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #121629 60%, #232946 100%);
+  box-shadow: 0 2px 8px #23294655;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #eebbc3;
 }
 
 nav a {
-  color: white;
-  padding: 15px 25px;
+  color: #eebbc3;
+  padding: 18px 36px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.2s;
+  font-weight: 700;
+  font-family: 'Orbitron', Arial, sans-serif;
+  transition: background 0.3s, color 0.2s, transform 0.2s;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  border-radius: 0 0 18px 18px;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  transform: scale(1.05);
-  color: #b3e0ff; /* blue highlight */
+nav a:hover, nav a:focus {
+  background: linear-gradient(90deg, #eebbc3 0%, #232946 100%);
+  color: #232946;
+  transform: scale(1.08);
 }
 
-/* Main Section Containers */
+/* --- Main Section Container --- */
 section {
-  padding: 60px 20px;
-  margin: 40px auto;
-  max-width: 960px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(41, 128, 185, 0.12); /* blue shadow */
+  padding: 60px 3vw;
+  margin: 48px auto;
+  max-width: 1600px;
+  background: rgba(35, 41, 70, 0.92);
+  border-radius: 36px;
+  box-shadow: 0 12px 48px #23294633;
   text-align: center;
+  backdrop-filter: blur(2px);
+  border: 2px solid #eebbc3;
 }
 
 h1, h2 {
-  color: #2980b9; /* blue */
-  margin-bottom: 15px;
+  color: #eebbc3;
+  margin-bottom: 18px;
+  font-family: 'Orbitron', 'Quicksand', Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 8px #23294688;
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #eaeaea;
 }
 
-/* Video Styles */
-video {
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  max-width: 100%;
+/* --- Home Video Container --- */
+section#home video {
+  border-radius: 32px;
+  box-shadow: 0 8px 32px #eebbc355;
+  margin-top: 24px;
+  border: 3px solid #eebbc3;
+  background: #232946;
 }
 
-/* Video Gallery */
+/* --- Calculator Container --- */
+.calculator-wrapper {
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: linear-gradient(120deg, #232946 60%, #3e497a 100%);
+  border-radius: 32px;
+  box-shadow: 0 0 32px #eebbc344;
+  max-width: 700px;
+  text-align: center;
+  color: #eebbc3;
+  border: 2px solid #eebbc3;
+}
+
+.age-calculator-container input,
+.age-calculator-container button {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  margin: 14px 8px;
+  border-radius: 10px;
+  border: 2px solid #eebbc3;
+  outline: none;
+  background: #232946;
+  color: #eebbc3;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.age-calculator-container input:focus {
+  border: 2.5px solid #eebbc3;
+  box-shadow: 0 0 8px #eebbc355;
+}
+
+.age-calculator-container button {
+  background: linear-gradient(90deg, #eebbc3 60%, #232946 100%);
+  color: #232946;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #eebbc344;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.age-calculator-container button:hover {
+  background: linear-gradient(90deg, #232946 60%, #eebbc3 100%);
+  color: #eebbc3;
+  box-shadow: 0 4px 16px #eebbc344;
+}
+
+.result-box {
+  margin-top: 22px;
+  text-align: left;
+  background: #232946;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #eebbc344 inset;
+  font-size: 1.08em;
+  color: #eebbc3;
+  animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Solar System Video Gallery --- */
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 32px;
   justify-content: center;
   margin-top: 40px;
 }
 
 .video-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 280px;
+  background: linear-gradient(135deg, #232946 60%, #3e497a 100%);
+  padding: 18px;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #eebbc344;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid #eebbc3;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.video-container:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px #eebbc355;
+  border-color: #fff;
 }
 
 .video-container video {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  border: 2px solid #eebbc3;
+  background: #232946;
 }
 
 .video-description {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 12px;
-  border-radius: 10px;
+  margin-top: 8px;
+  font-size: 1em;
+  color: #eebbc3;
+  background: rgba(35, 41, 70, 0.92);
+  padding: 16px;
+  border-radius: 14px;
   text-align: left;
   line-height: 1.5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px #eebbc344;
 }
 
 .planet-name {
-  font-size: 1.3em;
+  font-size: 1.25em;
   font-weight: bold;
-  color: #2980b9; /* blue */
-  margin-bottom: 8px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  color: #fff;
+  margin-bottom: 6px;
+  text-shadow: 1px 1px 2px #eebbc388;
 }
 
-/* Calculator Section */
-.calculator-wrapper {
-  margin: 60px auto;
-  padding: 30px;
-  background: linear-gradient(to right, #e0f7fa, #b3e0ff); /* blue gradient */
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(41,128,185,0.10); /* blue shadow */
-  max-width: 700px;
+/* --- Rotoscope Main Videos --- */
+.rotoscope-main-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.rotoscope-main-video {
+  background: linear-gradient(135deg, #eebbc3 60%, #232946 100%);
+  border-radius: 28px;
+  box-shadow: 0 4px 32px #eebbc344;
+  padding: 18px 18px 8px 18px;
   text-align: center;
+  width: 360px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid #eebbc3;
 }
 
-.age-calculator-container input,
-.age-calculator-container button {
-  padding: 10px 15px;
-  font-size: 1rem;
-  margin: 10px 5px;
-  border-radius: 8px;
-  border: 1px solid #2980b9; /* blue border */
+.rotoscope-main-video:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 8px 40px #eebbc355;
+  border-color: #fff;
 }
 
-.age-calculator-container button {
-  background-color: #2980b9; /* blue */
-  color: white;
+.rotoscope-main-video video {
+  border-radius: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 4px solid #232946;
+}
+
+.rotoscope-main-video p {
+  color: #232946;
+  font-weight: 700;
+  margin: 0;
+  background: none;
+  padding: 0;
+  font-size: 1.08em;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
+/* --- Rotoscope Weekly Progress --- */
+#rotoscope .video-gallery {
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+#rotoscope .video-container {
+  width: 220px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
   border: none;
-  cursor: pointer;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
 }
 
-.age-calculator-container button:hover {
-  background-color: #185a9d; /* darker blue */
+#rotoscope .video-container video {
+  border-radius: 18px 18px 0 0;
+  border-bottom: 4px solid #eebbc3;
+  box-shadow: 0 4px 16px #eebbc344;
 }
 
-.result-box {
-  margin-top: 20px;
-  text-align: left;
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(41,128,185,0.08); /* blue shadow */
+#rotoscope .video-container p {
+  margin: 0;
+  font-size: 1em;
+  color: #eebbc3;
+  background: linear-gradient(90deg, #232946 60%, #3e497a 100%);
+  padding: 10px 0 10px 0;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 8px #eebbc344;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', Arial, sans-serif;
 }
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  section, .calculator-wrapper {
+    max-width: 98vw;
+    padding: 30px 3vw;
+  }
+  .video-gallery {
+    gap: 18px;
+  }
+  .rotoscope-main-container {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  nav a {
+    padding: 10px 12px;
+    font-size: 1em;
+  }
+  section, .calculator-wrapper {
+    padding: 14px 1vw;
+    margin: 14px 0;
+  }
+  .video-container, #rotoscope .video-container {
+    width: 98vw;
+    max-width: 340px;
+  }
+  .rotoscope-main-video {
+    width: 98vw;
+    max-width: 340px;
+  }
+}
+
+/* --- End of Unique Style --- */

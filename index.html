@@ -62,7 +62,8 @@
         <strong>Diameter:</strong> 4,880 km<br>
         <strong>Surface Temperature: </strong> -173°C to 427°C<br>
         <strong>Year Length:</strong> 88 Earth days<br>
-        <strong>Planet Type:</strong>  Terrestrial
+        <strong>Planet Type:</strong>  Terrestrial<br>
+        <span class="planet-age" id="age-mercury"></span>
       </div>
     </div>
 
@@ -74,7 +75,8 @@
         <strong>Diameter:</strong> 12,104 km<br>
         <strong>Surface Temperature:</strong> ~465°C<br>
         <strong>Atmosphere Composition:</strong> Carbon Dioxide, Nitrogen<br>
-        <strong>Planet Type:</strong>  Terrestrial
+        <strong>Planet Type:</strong>  Terrestrial<br>
+        <span class="planet-age" id="age-venus"></span>
       </div>
     </div>
 
@@ -86,7 +88,8 @@
         <strong>Diameter:</strong> 12,742 km<br>
         <strong>Surface Temperature:</strong> -88 to 58°C<br>
         <strong>Atmosphere Composition:</strong> Nitrogen, Oxygen for Earth<br>
-        <strong>Planet Type:</strong> Terrestrial, Gas Giant, Ice Giant
+        <strong>Planet Type:</strong> Terrestrial, Gas Giant, Ice Giant<br>
+        <span class="planet-age" id="age-earth"></span>
       </div>
     </div>
 
@@ -98,7 +101,8 @@
         <strong>Diameter:</strong> 6,779 km<br>
         <strong>Surface Temperature:</strong>  -125°C to 20°C<br>
         <strong>Atmosphere Composition::</strong> Carbon Dioxide, Argon, Nitrogen<br>
-        <strong>Planet Type: </strong> KnoTerrestrial
+        <strong>Planet Type: </strong> KnoTerrestrial<br>
+        <span class="planet-age" id="age-mars"></span>
       </div>
     </div>
 
@@ -110,7 +114,8 @@
         <strong>Diameter:</strong> 139,820 km<br>
         <strong>Surface Temperature:</strong>  -145°C<br>
         <strong>Atmosphere Composition:</strong> Hydrogen, Helium<br>
-        <strong>Planet Type:</strong> Gas Giant
+        <strong>Planet Type:</strong> Gas Giant<br>
+        <span class="planet-age" id="age-jupiter"></span>
       </div>
     </div>
 
@@ -122,7 +127,8 @@
         <strong>Diameter:</strong>116,460 km<br>
         <strong>Surface Temperature: </strong> -178°C<br>
         <strong>Atmosphere Composition: </strong> Hydrogen, Helium<br>
-        <strong>Planet Type:</strong> Gas Giant
+        <strong>Planet Type:</strong> Gas Giant<br>
+        <span class="planet-age" id="age-saturn"></span>
       </div>
     </div>
 
@@ -134,7 +140,8 @@
         <strong>Diameter:</strong> 50,724 km<br>
         <strong>Surface Temperature:</strong> -224°C<br>
         <strong>Atmosphere Composition:</strong> Hydrogen, Helium, Methane<br>
-        <strong>Planet Type:</strong> Ice Giant
+        <strong>Planet Type:</strong> Ice Giant<br>
+        <span class="planet-age" id="age-uranus"></span>
       </div>
     </div>
 
@@ -146,7 +153,8 @@
         <strong>Diameter: </strong> 49,244 km<br>
         <strong>Surface Temperature:</strong>  -218°C<br>
         <strong>Atmosphere Composition: </strong> Hydrogen, Helium, Methane<br>
-        <strong>Planet Type:</strong> Ice Giant
+        <strong>Planet Type:</strong> Ice Giant<br>
+        <span class="planet-age" id="age-neptune"></span>
       </div>
     </div>
 
@@ -158,7 +166,8 @@
         <strong>Diameter: </strong> 2,377 km<br>
         <strong>Surface Temperature: </strong>-229°C<br>
         <strong>Atmosphere Composition:</strong> Nitrogen, Methane<br>
-        <strong>Planet Type: </strong> Dwarf Planet
+        <strong>Planet Type: </strong> Dwarf Planet<br>
+        <span class="planet-age" id="age-pluto"></span>
       </div>
     </div>
   </div>
@@ -203,35 +212,33 @@
 
 <script>
   function calculateAge() {
-    const earthAge = parseFloat(document.getElementById("earthAge").value);
-    if (isNaN(earthAge) || earthAge <= 0) {
-      alert("Please enter a valid positive age.");
-      return;
-    }
-
-    const orbitalPeriods = {
-      Mercury: 0.24,
-      Venus: 0.62,
-      Earth: 1,
-      Mars: 1.88,
-      Jupiter: 11.86,
-      Saturn: 29.46,
-      Uranus: 84.01,
-      Neptune: 164.8,
-      Pluto: 248.0
-    };
-
-    let output = "<h3>Your Planetary Ages:</h3><ul>";
-    for (const planet in orbitalPeriods) {
-      const age = (earthAge / orbitalPeriods[planet]).toFixed(2);
-      output += `<li><strong>${planet}:</strong> ${age} years old</li>`;
-    }
-    output += "</ul>";
-
-    const resultBox = document.getElementById("resultBox");
-    resultBox.innerHTML = output;
-    resultBox.style.display = "block";
+  const earthAge = parseFloat(document.getElementById("earthAge").value);
+  if (isNaN(earthAge) || earthAge <= 0) {
+    alert("Please enter a valid positive age.");
+    return;
   }
+
+  const orbitalPeriods = {
+    Mercury: 0.24,
+    Venus: 0.62,
+    Earth: 1,
+    Mars: 1.88,
+    Jupiter: 11.86,
+    Saturn: 29.46,
+    Uranus: 84.01,
+    Neptune: 164.8,
+    Pluto: 248.0
+  };
+
+  // Show ages in each planet container
+  for (const planet in orbitalPeriods) {
+    const age = (earthAge / orbitalPeriods[planet]).toFixed(2);
+    const ageSpan = document.getElementById("age-" + planet.toLowerCase());
+    if (ageSpan) {
+      ageSpan.textContent = `Your age: ${age} years`;
+    }
+  }
+}
 </script>
 
 </body>
